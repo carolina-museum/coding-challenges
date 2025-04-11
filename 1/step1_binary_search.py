@@ -16,7 +16,7 @@ class Solution:
         else:
             return Solution.binary_search(nums_sorted, start_i, mid_index, value_to_look_for)
     
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         
         nums_sorted = sorted(nums)
 
