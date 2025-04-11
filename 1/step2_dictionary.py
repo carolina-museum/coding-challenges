@@ -1,12 +1,12 @@
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         
-        nums_dict = {}
+        num_to_index = {}
         for i, num in enumerate(nums):
             complement = target - num
-            if complement in nums_dict:
-                return [i, nums_dict[complement]]
+            if complement in num_to_index:
+                return [i, num_to_index[complement]]
 
-            nums_dict[num] = i
+            num_to_index[num] = i
 
         return []
