@@ -16,7 +16,9 @@ if len(s) > len(t):
 
 計算量について：
 
-時間計算量は、sとtをそれぞれ順に確認していくので、O(S+T)です。（sの長さがS、tの長さがTとする）二重ループではありますが、sのそれぞれの要素についてtの全ての要素を見て回るわけではなく、tを行き来することはないのでO(S*T)とは考えませんでした。
+時間計算量は、sとtをそれぞれ順に確認していくので、~~O(S+T)~~ O(T)です。（sの長さがS、tの長さがTとする）
+
+二重ループではありますが、sのそれぞれの要素についてtの全ての要素を見て回るわけではなく、tを行き来することはないのでO(S*T)とは考えませんでした。
 
 空間計算量は、ポインタを使っているだけなので、O(1)だと思います。
 
@@ -42,7 +44,28 @@ while文で回しているのは私の実装と違います。勉強になりま
 
 
 Approach 3. Greedy Match with Character Indices Hashmap
-(今日は時間オーバーなのでこの先はまた明日、、！オフィスに行ってきます💪)
 
+follow-up questionに対応しています。
 
+> Follow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 109, and you want to check one by one to see if t has its subsequence. In this scenario, how would you change your code?
 
+解説を読む前の私の考え：
+- まず一番最初に思いつくのは、シンプルにsの数（k個）だけループする方法です。これはO(T*S)の時間計算量です。
+- 次に、それぞれのsにポインタを作って、一回のループで全てtと確認していく方法です。これは、O(T+S*k)の時間計算量です。(自信なし)
+- 他には、、、思いつきません、、、
+
+なんとハッシュマップを使ってtに含まれる文字の位置を把握しておくみたいです！！！！天才！！！
+
+メモ：二分探索の時に教わった関数がこの解法の実装に使われています：
+```
+match_index = bisect.bisect_right(indices_list, curr_match_index)
+```
+
+Approach 4: Dynamic Programming
+
+まだある、、、深い問題です。動的計画法を使うみたいです。
+
+DPテーブルを作って最終的にsの長さになれば、Trueということみたいです！
+私はまだまだDPに慣れていないのでこうやって学んでいくのが大事ですね....練習します。
+
+解説はここまで！次はこれらを実装してみます。
