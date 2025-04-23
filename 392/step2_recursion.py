@@ -22,4 +22,4 @@ class Solution:
             # index_t += 1 をif文の外に出すよりもこの書き方の方が私には分かりやすいです..! 
             #条件に当てはまらない場合にはsを増やさないことが綺麗に見えるので。
         
-        return recursion_isSubsequence(0, 0) #start with the 0-th index for both sequences.
+        return recursion_isSubsequence(0, 0) #start with index 0 for both sequences.
